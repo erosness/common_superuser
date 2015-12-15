@@ -910,7 +910,8 @@ int su_main(int argc, char *argv[], int need_client) {
         deny(&ctx);
     }
 
-    dballow = database_check(&ctx);
+    // Modified by T-Radio, always allow requests for su
+    dballow = ALLOW; //database_check(&ctx);
     switch (dballow) {
         case INTERACTIVE:
             break;
